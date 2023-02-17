@@ -1,0 +1,43 @@
+from art import logo
+print(logo)
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+def caesar(new_text, new_shift, new_direction):
+    if direction == "encode":
+      new_shift = shift
+    elif direction == "decode":
+      new_shift = -shift
+    else:
+      print("Choose a correct option.")
+    
+      
+    encoded_text = ""
+    new_index = 0
+    for char in new_text:
+      if char in alphabet:
+        new_index = (alphabet.index(char) + new_shift)%26
+        encoded_text += alphabet[new_index]
+      else:
+        encoded_text += char
+    print(encoded_text)
+
+
+
+
+again = True
+while again:
+  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+  text = input("Type your message:\n").lower()
+  shift = int(input("Type the shift number:\n"))
+
+
+  caesar(text,shift,direction)
+
+  result = input("Do you want to continue playing? Type 'yes' to continue or 'no' to leave\n")
+  if result == "no":
+    again = False
+    print("Goodbye.")
+
+
+
